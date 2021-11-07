@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ninja All",
+            "type": "shell",
+            "group": "build",
+            "command": "ninja",
+            "problemMatcher": "",
+            "windows":{
+                "options": {
+                    "cwd": "${workspaceFolder}\\win_build",
+                    "shell": {
+                        "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                    }
+                },
+            },
+            
+        },
+        {
+            "label": "CMAKE",
+            "type": "shell",
+            "command": "cmake",
+            "group": "build",
+            "args": ["-G Ninja", ".."],
+            "windows":{
+                "options": {
+                    "cwd": "${workspaceFolder}\\win_build"
+                }
+            },
+        }
+    ]
+}
